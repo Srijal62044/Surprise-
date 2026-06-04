@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="100" fill="#0a0a1a"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0a0a1a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="256" cy="256" r="200" fill="url(#glow)"/>
+  <!-- Stars scattered -->
+  <circle cx="120" cy="100" r="3" fill="#c084fc" opacity="0.8"/>
+  <circle cx="380" cy="80" r="2" fill="#818cf8" opacity="0.7"/>
+  <circle cx="430" cy="200" r="2.5" fill="#f472b6" opacity="0.6"/>
+  <circle cx="80" cy="320" r="2" fill="#c084fc" opacity="0.7"/>
+  <circle cx="450" cy="380" r="3" fill="#818cf8" opacity="0.8"/>
+  <circle cx="150" cy="420" r="2" fill="#f472b6" opacity="0.6"/>
+  <!-- Central star symbol -->
+  <g transform="translate(256,256)">
+    <path d="M0,-90 L15,-25 L75,-25 L28,10 L45,75 L0,38 L-45,75 L-28,10 L-75,-25 L-15,-25 Z"
+      fill="none" stroke="#c084fc" stroke-width="2" opacity="0.4"/>
+    <!-- Heart -->
+    <path d="M0,30 C0,30 -55,-20 -55,-55 C-55,-80 -30,-95 0,-70 C30,-95 55,-80 55,-55 C55,-20 0,30 0,30 Z"
+      fill="url(#heartGrad)"/>
+    <defs>
+      <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#c084fc"/>
+        <stop offset="50%" stop-color="#f472b6"/>
+        <stop offset="100%" stop-color="#818cf8"/>
+      </linearGradient>
+    </defs>
+    <!-- Small star sparkles -->
+    <circle cx="0" cy="-100" r="5" fill="#c084fc"/>
+    <circle cx="70" cy="20" r="3" fill="#f472b6"/>
+    <circle cx="-70" cy="20" r="3" fill="#818cf8"/>
+  </g>
+</svg>
