@@ -1,0 +1,58 @@
+{
+  "name": "The Universe Chose Priyanka",
+  "short_name": "For Priyanka",
+  "description": "A heartfelt cinematic digital experience created by Srijal for Priyanka — where the stars align and the universe speaks.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0a1a",
+  "theme_color": "#c084fc",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "categories": ["lifestyle", "personalization"],
+  "icons": [
+    {
+      "src": "assets/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/icons/screenshot.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "The Universe Chose Priyanka"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Photo Memories",
+      "short_name": "Memories",
+      "description": "View photo memories",
+      "url": "./index.html#memories",
+      "icons": [{ "src": "assets/icons/icon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Secret Vault",
+      "short_name": "Vault",
+      "description": "Open the secret vault",
+      "url": "./index.html#vault",
+      "icons": [{ "src": "assets/icons/icon.svg", "sizes": "any" }]
+    }
+  ]
+}

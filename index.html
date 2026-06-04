@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="A heartfelt cinematic digital experience created by Srijal for Priyanka — where the stars align and the universe speaks.">
+  <meta name="theme-color" content="#c084fc">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="For Priyanka">
+  <meta name="application-name" content="The Universe Chose Priyanka">
+  <meta name="msapplication-TileColor" content="#0a0a1a">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:title" content="The Universe Chose Priyanka">
+  <meta property="og:description" content="A heartfelt cinematic digital experience created by Srijal for Priyanka.">
+  <meta property="og:type" content="website">
+  <title>The Universe Chose Priyanka</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <canvas id="loading-canvas"></canvas>
+    <div class="loading-content">
+      <div class="terminal-box">
+        <div class="terminal-header">
+          <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+          <span class="t-title">universe_finder.exe</span>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line" id="tl1"></div>
+          <div class="t-line" id="tl2"></div>
+          <div class="t-line" id="tl3"></div>
+          <div class="t-line" id="tl4"></div>
+          <div class="t-line" id="tl5"></div>
+          <div class="t-cursor" id="tcursor">█</div>
+        </div>
+      </div>
+      <div class="loading-name-reveal" id="loading-name-reveal">
+        <div class="reveal-label">MATCH FOUND ✓</div>
+        <div class="reveal-name" id="reveal-name"></div>
+        <div class="reveal-subtitle">One in 8,000,000,000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Galaxy Background -->
+  <canvas id="bg-canvas"></canvas>
+  <div id="aurora"></div>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <div class="nav-logo">✦ The Universe Chose Priyanka ✦</div>
+    <div class="nav-links">
+      <a href="#memories">Memories</a>
+      <a href="#heart-galaxy">Heart</a>
+      <a href="#constellation">Stars</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#finale">Finale</a>
+    </div>
+  </nav>
+
+  <!-- EASTER EGG HEARTS -->
+  <div class="eh" id="eh0" data-n="0">💗</div>
+  <div class="eh" id="eh1" data-n="1">💗</div>
+  <div class="eh" id="eh2" data-n="2">💗</div>
+  <div class="eh" id="eh3" data-n="3">💗</div>
+  <div class="eh" id="eh4" data-n="4">💗</div>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section id="hero" class="section hero-section">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">Among 8,000,000,000 people in the world</div>
+        <h1 class="hero-title">The Universe Chose<br><span class="hero-name">Priyanka</span></h1>
+        <div class="hero-typing-wrap">
+          <p id="hero-typing" class="hero-typing"></p>
+        </div>
+        <a href="#memories" class="btn-begin">Begin The Journey ↓</a>
+      </div>
+    </section>
+
+    <!-- PHOTO MEMORIES -->
+    <section id="memories" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Photo Memories</h2>
+        <p class="s-sub">Each frame, a universe of its own</p>
+      </div>
+      <div class="polaroid-grid" id="polaroid-grid"></div>
+    </section>
+
+    <!-- AI ANALYZER -->
+    <section id="ai-analyzer" class="section">
+      <div class="s-header">
+        <h2 class="s-title">AI Analysis</h2>
+        <p class="s-sub">NEURAL ANALYSIS SYSTEM v2.6</p>
+      </div>
+      <div class="ai-card glass-card">
+        <div class="ai-terminal-head">
+          <div class="ai-dots"><span></span><span></span><span></span></div>
+          <div class="ai-title-bar">PRIYANKA_SCAN.exe</div>
+        </div>
+        <div class="ai-scan-label">» Scanning Priyanka...</div>
+        <div id="ai-bars"></div>
+        <div id="ai-result" class="ai-result" style="display:none">
+          <div class="ai-divider"></div>
+          <div class="ai-report-title">FINAL REPORT:</div>
+          <div class="ai-report-text">Priyanka is officially <span class="ai-amazing">AMAZING</span>.</div>
+          <div class="ai-badge">✓ CERTIFIED BY THE UNIVERSE</div>
+        </div>
+        <button class="btn-primary" id="btn-analyze" onclick="runAIAnalysis()">Run Analysis</button>
+      </div>
+    </section>
+
+    <!-- HEART GALAXY -->
+    <section id="heart-galaxy" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Heart Galaxy</h2>
+        <p class="s-sub">Thousands of particles, one message</p>
+      </div>
+      <div class="heart-wrap">
+        <canvas id="heart-canvas"></canvas>
+        <div class="heart-msg" id="heart-msg">
+          <p>Somehow,</p>
+          <p>the universe decided</p>
+          <p>our paths should cross.</p>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="buildHeartGalaxy()">Create Heart Galaxy</button>
+    </section>
+
+    <!-- STAR CONSTELLATION -->
+    <section id="constellation" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Star Constellation</h2>
+        <p class="s-sub">Every star holds a message — click to discover</p>
+      </div>
+      <div class="constellation-wrap">
+        <canvas id="constellation-canvas"></canvas>
+        <div id="star-popup" class="star-popup" style="display:none"></div>
+      </div>
+    </section>
+
+    <!-- COMPLIMENT GENERATOR -->
+    <section id="compliments" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Compliment Generator</h2>
+        <p class="s-sub">Because you deserve to hear this</p>
+      </div>
+      <div class="compliment-wrap">
+        <div class="compliment-card glass-card" id="compliment-card">
+          <div class="compliment-stars">✦ ✦ ✦</div>
+          <p class="compliment-text" id="compliment-text">Press the button to receive a compliment</p>
+          <div class="compliment-stars">✦ ✦ ✦</div>
+        </div>
+        <button class="btn-primary" onclick="generateCompliment()">Generate Compliment</button>
+      </div>
+    </section>
+
+    <!-- SPIN THE WHEEL -->
+    <section id="spin-wheel" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Spin The Wheel</h2>
+        <p class="s-sub">What makes Priyanka extraordinary? Spin to find out</p>
+      </div>
+      <div class="wheel-wrap">
+        <div class="wheel-pointer">▼</div>
+        <canvas id="wheel-canvas" width="360" height="360"></canvas>
+        <div class="wheel-result glass-card" id="wheel-result" style="opacity:0">
+          <span id="wheel-result-text"></span>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="spinWheel()">Spin The Wheel ✦</button>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Our Story</h2>
+        <p class="s-sub">Every chapter, a memory worth keeping</p>
+      </div>
+      <div class="timeline-wrap" id="timeline-wrap"></div>
+    </section>
+
+    <!-- PARALLEL UNIVERSE -->
+    <section id="parallel" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Parallel Universe</h2>
+        <p class="s-sub">A search across all possible timelines</p>
+      </div>
+      <div class="parallel-wrap">
+        <div class="parallel-screen glass-card" id="parallel-screen">
+          <div class="parallel-icon">🌌</div>
+          <p>Wondering what would have happened<br>if our paths never crossed...</p>
+        </div>
+        <button class="btn-primary" onclick="searchParallelUniverse()">What If We Never Met?</button>
+      </div>
+    </section>
+
+    <!-- CHAT AI -->
+    <section id="chat" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Ask The Universe</h2>
+        <p class="s-sub">The universe always knows the answer</p>
+      </div>
+      <div class="chat-wrap glass-card">
+        <div class="chat-msgs" id="chat-msgs">
+          <div class="chat-msg bot-msg">
+            <div class="bot-av">🌌</div>
+            <div class="msg-bubble">Ask me anything about Priyanka...</div>
+          </div>
+        </div>
+        <div class="chat-chips">
+          <button class="chip" onclick="askChat('Who is the best person?')">Who is the best person?</button>
+          <button class="chip" onclick="askChat('Who is the cutest?')">Who is the cutest?</button>
+          <button class="chip" onclick="askChat('Who is the most special?')">Who is the most special?</button>
+          <button class="chip" onclick="askChat('Who makes every day brighter?')">Who makes every day brighter?</button>
+          <button class="chip" onclick="askChat('Who is the kindest?')">Who is the kindest?</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COSMIC HOROSCOPE -->
+    <section id="horoscope" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Priyanka's Cosmic Reading</h2>
+        <p class="s-sub">The universe has something to say — today's cosmic forecast for Priyanka</p>
+      </div>
+      <div class="horoscope-wrap">
+        <div class="horoscope-card glass-card" id="horoscope-card">
+          <div class="horoscope-top">
+            <canvas id="horoscope-stars" width="320" height="140"></canvas>
+            <div class="horoscope-symbol" id="horoscope-symbol">✦</div>
+            <div class="horoscope-date" id="horoscope-date"></div>
+          </div>
+          <div class="horoscope-attrs" id="horoscope-attrs" style="opacity:0"></div>
+          <div class="horoscope-verdict" id="horoscope-verdict" style="opacity:0"></div>
+          <div class="horoscope-daily" id="horoscope-daily" style="opacity:0"></div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="revealHoroscope()">Read Today's Forecast ✦</button>
+    </section>
+
+    <!-- WISH BUBBLES -->
+    <section id="wish-bubbles" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Wish Bubbles</h2>
+        <p class="s-sub">Pop a bubble to reveal a wish for Priyanka ✨</p>
+      </div>
+      <div class="bubbles-field" id="bubbles-field"></div>
+      <button class="btn-primary" onclick="refillBubbles()">Refill Bubbles ✦</button>
+    </section>
+
+    <!-- SECRET VAULT -->
+    <section id="vault" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Secret Vault</h2>
+        <p class="s-sub">Only the right person can open this</p>
+      </div>
+      <div class="vault-wrap" id="vault-wrap"></div>
+    </section>
+
+    <!-- PHOTO PUZZLE -->
+    <section id="puzzle" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Photo Puzzle</h2>
+        <p class="s-sub">Every piece finds where it belongs</p>
+      </div>
+      <div class="puzzle-outer" id="puzzle-outer"></div>
+    </section>
+
+    <!-- TIME CAPSULE -->
+    <section id="time-capsule" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Time Capsule</h2>
+        <p class="s-sub">A letter sealed in time, just for you</p>
+      </div>
+      <div class="capsule-wrap">
+        <div class="envelope-area" id="envelope-area">
+          <div class="envelope" id="envelope" onclick="openCapsule()">
+            <div class="env-flap" id="env-flap"></div>
+            <div class="env-body">
+              <div class="env-seal">✦</div>
+              <div class="env-label">Open Time Capsule</div>
+            </div>
+          </div>
+        </div>
+        <div class="capsule-letter glass-card" id="capsule-letter" style="display:none">
+          <p class="letter-dear">Dear Future Priyanka,</p>
+          <br>
+          <p>I hope you're still smiling,</p>
+          <p>still happy,</p>
+          <p>and still being your wonderful self.</p>
+          <br>
+          <p>I hope the world has been kind to you,</p>
+          <p>the way you've always been kind to those around you.</p>
+          <br>
+          <p>Whatever chapter of life you're in right now —</p>
+          <p>know that somewhere in this universe,</p>
+          <p>someone is grateful you exist.</p>
+          <br>
+          <p class="letter-sig">— Srijal</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMORY WALL -->
+    <section id="memory-wall" class="section">
+      <div class="s-header">
+        <h2 class="s-title">Memory Wall</h2>
+        <p class="s-sub">Infinite moments, infinite warmth</p>
+      </div>
+      <div class="memory-wall" id="memory-wall-inner"></div>
+    </section>
+
+    <!-- PERSONAL LETTER -->
+    <section id="letter" class="section">
+      <div class="s-header">
+        <h2 class="s-title">A Letter From Srijal</h2>
+        <p class="s-sub">Written just for you</p>
+      </div>
+      <div class="letter-wrap">
+        <div class="letter-paper glass-card" id="letter-paper">
+          <div class="letter-seal-top">
+            <span class="letter-wax">✦</span>
+          </div>
+          <div class="letter-body" id="letter-body" style="opacity:0">
+            <p class="letter-salutation">Dear Priyanka,</p>
+            <div class="letter-lines" id="letter-lines"></div>
+            <p class="letter-closing">With all sincerity,</p>
+            <p class="letter-from">— Srijal</p>
+          </div>
+          <button class="btn-letter" id="btn-letter" onclick="revealLetter()">Open Letter ✉</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRAND FINALE -->
+    <section id="finale" class="section finale-section">
+      <canvas id="finale-canvas"></canvas>
+      <div class="finale-inner" id="finale-inner">
+        <div class="finale-text" id="finale-text"></div>
+        <div class="finale-heart" id="finale-heart">❤️</div>
+        <div class="finale-sig" id="finale-sig">— Srijal</div>
+      </div>
+      <button class="btn-finale" id="btn-finale" onclick="startFinale()">Begin Grand Finale ✦</button>
+    </section>
+
+  </main>
+
+  <!-- Floating Music Player -->
+  <div class="music-player glass-card" id="music-player">
+    <div class="music-eq" id="music-eq">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="music-info">
+      <div class="music-track">Khayaal</div>
+      <div class="music-artist">Talwiinder</div>
+    </div>
+    <div class="music-ctrl">
+      <button class="m-btn" onclick="musicToggle()" id="btn-play">▶</button>
+      <button class="m-btn" onclick="musicMute()" id="btn-mute">🔊</button>
+    </div>
+    <div class="music-prog-wrap" onclick="seekMusic(event)" title="Click to seek">
+      <div class="music-prog" id="music-prog"></div>
+    </div>
+    <input type="range" class="vol-slider" id="vol-slider" min="0" max="100" value="60" oninput="setVol(this.value)">
+    <audio id="audio-player" loop>
+      <source src="assets/music/khayaal.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Priyanka Mode Toggle -->
+  <button class="pm-btn" id="pm-btn" onclick="togglePriyankaMode()">🌸 Priyanka Mode</button>
+
+  <!-- Photo Modal -->
+  <div id="photo-modal" class="photo-modal-overlay" onclick="closePhotoModal(event)">
+    <div class="photo-modal-box">
+      <button class="modal-x" onclick="closePhotoModal()">×</button>
+      <img id="modal-img" src="" alt="Memory">
+      <p id="modal-note" class="modal-note"></p>
+    </div>
+  </div>
+
+  <!-- Easter Secret Page -->
+  <div id="easter-page" class="easter-page" style="display:none">
+    <button class="easter-x" onclick="closeEasterPage()">×</button>
+    <div class="easter-inner">
+      <div class="easter-trophy">🏆</div>
+      <h2>Secret Achievement Unlocked ❤️</h2>
+      <p>You found all 5 hidden hearts across the universe.</p>
+      <p>The universe confirms:</p>
+      <p class="easter-big">Priyanka is extraordinary.</p>
+      <div class="easter-hearts">❤️ ❤️ ❤️ ❤️ ❤️</div>
+    </div>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="js/particles.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/vault.js"></script>
+  <script src="js/puzzle.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/extras.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js', { scope: './' })
+          .catch(function() {});
+      });
+    }
+  </script>
+</body>
+</html>
