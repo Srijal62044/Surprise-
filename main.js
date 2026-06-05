@@ -389,7 +389,7 @@ function initConstellation() {
   }
 
   function getStarAt(x, y) {
-    return stars.find(s => Math.hypot(s.x - x, s.y - y) < s.r + 12);
+    return stars.find(s => Math.hypot(s.x - x, s.y - y) < s.r < 25);
   }
 
   function showPopup(star, cx, cy) {
