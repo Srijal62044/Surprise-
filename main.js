@@ -410,10 +410,11 @@ function initConstellation() {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     const star = getStarAt(x, y);
-    if (star) {
-      showPopup(star, x, y);
+     if (star) {
+    alert(star.msg);
+     
       if (navigator.vibrate) navigator.vibrate(50);
-    }
+     }
   });
 
   canvas.addEventListener('touchstart', e => {
