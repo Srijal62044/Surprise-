@@ -3,7 +3,7 @@
 // ===========================
 (function() {
   const outer = document.getElementById('puzzle-outer');
-  const IMG_SRC = 'p5.jpg';
+  const IMG_SRC = 'p6.jpg';
   const GRID = 3;
   const TOTAL = GRID * GRID;
   let pieces = [];
