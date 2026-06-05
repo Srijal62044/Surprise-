@@ -401,7 +401,7 @@ function initConstellation() {
     if (left + 280 > window.innerWidth) left = bnd.left + cx - 296;
     popup.style.left = left + 'px';
     popup.style.top = top + 'px';
-    popup.style.position = 'absolute';
+    popup.style.position = 'fixed';
     setTimeout(() => { popup.style.display = 'none'; }, 3500);
   }
 
@@ -411,7 +411,7 @@ function initConstellation() {
     const y = e.clientY - rect.top;
     const star = getStarAt(x, y);
      if (star) {
-    alert(star.msg);
+    showPopup(star, x, y);
      
       if (navigator.vibrate) navigator.vibrate(50);
      }
