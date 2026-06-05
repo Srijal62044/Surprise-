@@ -43,7 +43,7 @@
 
   inputs.forEach((inp, idx) => {
     inp.addEventListener('keyup', e => {
-      const val = inp.value.replace(/[^a-zA-Z]/g, '').slice(-1).toUpperCase();
+      const val = inp.value.replace(/[^a-zA-Z0-9]/g, '').slice(-1).toUpperCase();
       inp.value = val;
       if (val && idx < inputs.length - 1) {
         inputs[idx + 1].focus();
