@@ -595,10 +595,10 @@ window.openCapsule = function() {
 // ---- MEMORY WALL ----
 function initMemoryWall() {
   const photos = [
-    'assets/photos/p1.jpg', 'assets/photos/p2.jpg', 'assets/photos/p3.jpg',
-    'assets/photos/p4.jpg', 'assets/photos/p5.jpg', 'assets/photos/p6.jpg',
-    'assets/photos/p7.webp', 'assets/photos/p8.jpg', 'assets/photos/p9.jpg',
-    'assets/photos/p10.jpg', 'assets/photos/p11.jpg', 'assets/photos/p12.jpg'
+    'p1.jpg', 'p2.jpg', 'p3.jpg',
+    'p4.jpg', 'p5.jpg', 'p6.jpg',
+    'p7.webp', 'p8.jpg', 'p9.jpg',
+    'p10.jpg', 'p11.jpg', 'p12.jpg'
   ];
   const quotes = [
     'Some people become part of your story without even trying.',
