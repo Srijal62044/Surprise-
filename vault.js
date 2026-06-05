@@ -2,7 +2,7 @@
 // SECRET VAULT
 // ===========================
 (function() {
-  const CODE = 'LOVE';
+  const CODE = '2007';
   const wrap = document.getElementById('vault-wrap');
 
   // Build vault UI
@@ -10,7 +10,7 @@
     <div class="vault-door" id="vault-door">
       <div class="vault-icon">🔐</div>
       <div class="vault-title">SECRET VAULT</div>
-      <div class="vault-hint">Hint: Something only Priyanka knows<br><small style="opacity:0.5;font-size:0.7rem;letter-spacing:0.1em">(4 letters)</small></div>
+      <div class="vault-hint">Hint: Someones Birth Of Year😜<br><small style="opacity:0.5;font-size:0.7rem;letter-spacing:0.1em">(4 letters)</small></div>
       <div class="vault-input-row" id="vault-input-row">
         <input class="vault-char" maxlength="1" type="text" autocomplete="off" data-i="0">
         <input class="vault-char" maxlength="1" type="text" autocomplete="off" data-i="1">
@@ -23,7 +23,7 @@
     <div class="vault-letter" id="vault-letter">
       <div class="vault-letter-title">✦ DECRYPTED MESSAGE ✦</div>
       <div class="vault-letter-text">
-        Dear Priyanka,<br><br>
+        Dear Huggu😋,<br><br>
         You probably don't realize it,<br>
         but you've made many ordinary days<br>
         feel a little more special.<br><br>
