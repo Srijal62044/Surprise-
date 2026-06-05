@@ -404,8 +404,9 @@ body.priyanka-mode {
 .constellation-wrap {
   position: relative; width: min(700px, 95vw); height: min(500px, 60vw);
 }
-#constellation-canvas { width: 100%; height: 100%; }
+#constellation-canvas { width: 100%; height: 100%; display: block; pointer-events: auto; cursor: pointer; }
 .star-popup {
+   z-index: 99999;
   position: absolute; padding: 14px 20px;
   background: rgba(10,10,26,0.95);
   border: 1px solid var(--accent); border-radius: 12px;
